@@ -6,6 +6,9 @@ function showPage(pageId) {
     document.getElementById(pageId).style.display = "block";
 }
 
+// Show login page initially
+showPage('loginPage');
+
 // ================= TOGGLE PASSWORD =================
 function toggleLoginPass() {
     let pass = document.getElementById("loginPass");
@@ -18,7 +21,7 @@ function toggleRegisterPass() {
 }
 
 // ================= USER AUTH =================
-let users = {}; // stores registered users
+let users = {};
 
 function register() {
     let username = document.getElementById("newUser").value.trim();
@@ -53,4 +56,8 @@ function login() {
     } else {
         alert("Invalid username or password!");
     }
+}
+
+function logout() {
+    showPage("loginPage");
 }
