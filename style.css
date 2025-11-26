@@ -1,84 +1,103 @@
+/* ================= GENERAL STYLES ================= */
 body {
-    background-color: #ffd6e7; /* pastel pink */
-    font-family: Arial, sans-serif;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.page {
+    display: none;
+}
+
+.box {
+    background-color: #fff;
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     text-align: center;
 }
 
-/* Hide all pages by default */
-.page {
-    display: none;
-    padding-top: 40px;
+h2 {
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* Login/Register boxes */
-.box {
-    background: white;
-    padding: 20px;
-    width: 300px;
-    margin: auto;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-
-/* Input group with eye icon */
 .input-group {
+    margin-bottom: 15px;
     position: relative;
-    margin: 10px 0;
 }
 
-.input-group input {
-    width: 90%;
-    padding: 8px;
-    border: 1px solid lightgray;
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .eye {
     position: absolute;
-    right: 15px;
-    top: 9px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-    user-select: none;
 }
 
 /* Buttons */
 button {
-    padding: 8px 20px;
-    margin-top: 10px;
-    cursor: pointer;
+    width: 100%;
+    padding: 10px;
     border: none;
-    background: #ff80b3;
+    background-color: #4CAF50;
     color: white;
+    font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-    background: #ff4d94;
+    background-color: #45a049;
 }
 
-/* Portfolio layout */
+/* Links */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ================= PORTFOLIO PAGE ================= */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 .profile-img {
-    width: 350px;
-    height: 350px;
-    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 20px;
 }
 
-.text-box {
-    margin-left: 30px;
-    max-width: 350px;
-    text-align: left;
+.text-box h2 {
+    margin-bottom: 15px;
 }
 
-a {
-    color: blue;
-    cursor: pointer;
+.text-box p, .text-box a {
+    font-size: 16px;
+    margin: 5px 0;
 }
