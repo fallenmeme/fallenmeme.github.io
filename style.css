@@ -1,0 +1,23 @@
+body {
+    background-color: #ffd6e7; /* pastel pink */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.page {
+    display: none;
+    margin-top: 50px;
+}
+
+input {
+    padding: 5px;
+}
+
+button {
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+img {
+    border-radius: 10px;
+}
