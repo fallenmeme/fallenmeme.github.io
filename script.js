@@ -1,57 +1,56 @@
+// ================= PAGE NAVIGATION =================
 function showPage(pageId) {
-    document.querySelectorAll(".page").forEach(page => page.style.display = "none");
+    document.querySelectorAll(".page").forEach(page => {
+        page.style.display = "none";
+    });
     document.getElementById(pageId).style.display = "block";
 }
 
-// ---------------- REGISTER FUNCTION ----------------
-function register() {
-    let user = document.getElementById("newUser").value.trim();
-    let pass = document.getElementById("newPass").value.trim();
+// ================= TOGGLE PASSWORD =================
+function toggleLoginPass() {
+    let pass = document.getElementById("loginPass");
+    pass.type = (pass.type === "password") ? "text" : "password";
+}
 
-    if (!user || !pass) {
-        alert("Please fill out all fields.");
+function toggleRegisterPass() {
+    let pass = document.getElementById("newPass");
+    pass.type = (pass.type === "password") ? "text" : "password";
+}
+
+// ================= USER AUTH =================
+let users = {}; // stores registered users
+
+function register() {
+    let username = document.getElementById("newUser").value.trim();
+    let password = document.getElementById("newPass").value;
+
+    if(username === "" || password === "") {
+        alert("Please fill out all fields!");
         return;
     }
 
-    // Store as an object in localStorage
-    let users = JSON.parse(localStorage.getItem("users") || "{}");
-
-    if (users[user]) {
+    if(users[username]) {
         alert("Username already exists!");
         return;
     }
 
-    users[user] = pass;
-    localStorage.setItem("users", JSON.stringify(users));
-
-    alert("Registration successful! Please log in.");
-
-    // Clear inputs
+    users[username] = password;
+    alert("Registration successful! You can now login.");
     document.getElementById("newUser").value = "";
     document.getElementById("newPass").value = "";
-    document.getElementById("loginUser").value = "";
-    document.getElementById("loginPass").value = "";
-
     showPage("loginPage");
 }
 
-// ---------------- LOGIN FUNCTION ----------------
 function login() {
-    let user = document.getElementById("loginUser").value.trim();
-    let pass = document.getElementById("loginPass").value.trim();
+    let username = document.getElementById("loginUser").value.trim();
+    let password = document.getElementById("loginPass").value;
 
-    let users = JSON.parse(localStorage.getItem("users") || "{}");
-
-    if (users[user] && users[user] === pass) {
-        showPage("homePage");
+    if(users[username] && users[username] === password) {
+        alert("Login successful!");
+        document.getElementById("loginUser").value = "";
+        document.getElementById("loginPass").value = "";
+        showPage("portfolioPage");
     } else {
-        alert("Incorrect username or password.");
+        alert("Invalid username or password!");
     }
-}
-
-// ---------------- LOGOUT ----------------
-function logout() {
-    showPage("loginPage");
-    document.getElementById("loginUser").value = "";
-    document.getElementById("loginPass").value = "";
 }
