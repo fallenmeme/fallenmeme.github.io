@@ -1,63 +1,58 @@
-// ================= PAGE NAVIGATION =================
+// Show selected page only
 function showPage(pageId) {
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
-    });
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("registerPage").style.display = "none";
+    document.getElementById("portfolioPage").style.display = "none";
+
     document.getElementById(pageId).style.display = "block";
 }
 
-// Show login page initially
-showPage('loginPage');
-
-// ================= TOGGLE PASSWORD =================
-function toggleLoginPass() {
-    let pass = document.getElementById("loginPass");
-    pass.type = (pass.type === "password") ? "text" : "password";
-}
-
-function toggleRegisterPass() {
-    let pass = document.getElementById("newPass");
-    pass.type = (pass.type === "password") ? "text" : "password";
-}
-
-// ================= USER AUTH =================
-let users = {};
-
+// Register user
 function register() {
-    let username = document.getElementById("newUser").value.trim();
-    let password = document.getElementById("newPass").value;
+    let user = document.getElementById("newUser").value;
+    let pass = document.getElementById("newPass").value;
 
-    if(username === "" || password === "") {
-        alert("Please fill out all fields!");
+    if (user === "" || pass === "") {
+        alert("Please fill out all fields.");
         return;
     }
 
-    if(users[username]) {
-        alert("Username already exists!");
-        return;
-    }
+    localStorage.setItem("username", user);
+    localStorage.setItem("password", pass);
 
-    users[username] = password;
-    alert("Registration successful! You can now login.");
-    document.getElementById("newUser").value = "";
-    document.getElementById("newPass").value = "";
+    alert("Registration successful! Please log in.");
     showPage("loginPage");
 }
 
+// Login user
 function login() {
-    let username = document.getElementById("loginUser").value.trim();
-    let password = document.getElementById("loginPass").value;
+    let savedUser = localStorage.getItem("username");
+    let savedPass = localStorage.getItem("password");
 
-    if(users[username] && users[username] === password) {
-        alert("Login successful!");
-        document.getElementById("loginUser").value = "";
-        document.getElementById("loginPass").value = "";
+    let user = document.getElementById("loginUser").value;
+    let pass = document.getElementById("loginPass").value;
+
+    if (user === savedUser && pass === savedPass) {
+        // No alert — go straight to portfolio
         showPage("portfolioPage");
     } else {
-        alert("Invalid username or password!");
+        alert("Incorrect username or password!");
     }
 }
 
-function logout() {
-    showPage("loginPage");
+/* PASSWORD SHOW/HIDE */
+
+// Login password toggle
+function toggleLoginPass() {
+    let field = document.getElementById("loginPass");
+    field.type = field.type === "password" ? "text" : "password";
 }
+
+// Register password toggle
+function toggleRegisterPass() {
+    let field = document.getElementById("newPass");
+    field.type = field.type === "password" ? "text" : "password";
+}
+
+// Show login page on start
+showPage("loginPage");
