@@ -1,4 +1,4 @@
-// Show a specific page
+// Show selected page only
 function showPage(pageId) {
     document.getElementById("loginPage").style.display = "none";
     document.getElementById("registerPage").style.display = "none";
@@ -9,18 +9,18 @@ function showPage(pageId) {
 
 // Register user
 function register() {
-    let username = document.getElementById("newUser").value;
-    let password = document.getElementById("newPass").value;
+    let user = document.getElementById("newUser").value;
+    let pass = document.getElementById("newPass").value;
 
-    if(username === "" || password === "") {
-        alert("Please fill all fields!");
+    if (user === "" || pass === "") {
+        alert("Please fill out all fields.");
         return;
     }
 
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
+    localStorage.setItem("username", user);
+    localStorage.setItem("password", pass);
 
-    alert("Registered! Please login.");
+    alert("Registration successful! Please log in.");
     showPage("loginPage");
 }
 
@@ -29,28 +29,30 @@ function login() {
     let savedUser = localStorage.getItem("username");
     let savedPass = localStorage.getItem("password");
 
-    let username = document.getElementById("loginUser").value;
-    let password = document.getElementById("loginPass").value;
+    let user = document.getElementById("loginUser").value;
+    let pass = document.getElementById("loginPass").value;
 
-    if(username === savedUser && password === savedPass) {
-        showPage("portfolioPage"); // Go directly to portfolio
+    if (user === savedUser && pass === savedPass) {
+        // No alert — go straight to portfolio
+        showPage("portfolioPage");
     } else {
         alert("Incorrect username or password!");
     }
 }
 
-// Toggle show/hide password
+/* PASSWORD SHOW/HIDE */
+
+// Login password toggle
 function toggleLoginPass() {
-    let passField = document.getElementById("loginPass");
-    if(passField.type === "password") passField.type = "text";
-    else passField.type = "password";
+    let field = document.getElementById("loginPass");
+    field.type = field.type === "password" ? "text" : "password";
 }
 
+// Register password toggle
 function toggleRegisterPass() {
-    let passField = document.getElementById("newPass");
-    if(passField.type === "password") passField.type = "text";
-    else passField.type = "password";
+    let field = document.getElementById("newPass");
+    field.type = field.type === "password" ? "text" : "password";
 }
 
-// Show login page at start
+// Show login page on start
 showPage("loginPage");
