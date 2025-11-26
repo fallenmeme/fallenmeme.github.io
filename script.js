@@ -1,10 +1,5 @@
 function showPage(pageId) {
-    // Hide all pages
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
-    });
-
-    // Show selected page
+    document.querySelectorAll(".page").forEach(page => page.style.display = "none");
     document.getElementById(pageId).style.display = "block";
 }
 
@@ -13,21 +8,27 @@ function register() {
     let user = document.getElementById("newUser").value.trim();
     let pass = document.getElementById("newPass").value.trim();
 
-    if (user === "" || pass === "") {
+    if (!user || !pass) {
         alert("Please fill out all fields.");
         return;
     }
 
-    localStorage.setItem("username", user);
-    localStorage.setItem("password", pass);
+    // Store as an object in localStorage
+    let users = JSON.parse(localStorage.getItem("users") || "{}");
+
+    if (users[user]) {
+        alert("Username already exists!");
+        return;
+    }
+
+    users[user] = pass;
+    localStorage.setItem("users", JSON.stringify(users));
 
     alert("Registration successful! Please log in.");
 
-    // Clear register inputs
+    // Clear inputs
     document.getElementById("newUser").value = "";
     document.getElementById("newPass").value = "";
-
-    // Clear login inputs also
     document.getElementById("loginUser").value = "";
     document.getElementById("loginPass").value = "";
 
@@ -39,10 +40,9 @@ function login() {
     let user = document.getElementById("loginUser").value.trim();
     let pass = document.getElementById("loginPass").value.trim();
 
-    let savedUser = localStorage.getItem("username");
-    let savedPass = localStorage.getItem("password");
+    let users = JSON.parse(localStorage.getItem("users") || "{}");
 
-    if (user === savedUser && pass === savedPass) {
+    if (users[user] && users[user] === pass) {
         showPage("homePage");
     } else {
         alert("Incorrect username or password.");
@@ -52,4 +52,6 @@ function login() {
 // ---------------- LOGOUT ----------------
 function logout() {
     showPage("loginPage");
+    document.getElementById("loginUser").value = "";
+    document.getElementById("loginPass").value = "";
 }
