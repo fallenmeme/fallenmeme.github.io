@@ -4,6 +4,16 @@
     height: 100vh;
 }
 
+/* Portfolio background */
+#portfolioPage {
+    background-image: url("5649206fc71be0e70404f1f7bfa9f50d.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
 /* Portfolio content */
 .container {
     display: flex;
@@ -42,48 +52,3 @@
     width: 85%;
     padding: 8px;
 }
-
-.eye {
-    position: absolute;
-    right: 20px;
-    top: 8px;
-    cursor: pointer;
-}
-
-/* ---------- PORTFOLIO PAGE BACKGROUND ---------- */
-#portfolioPage {
-    background-image: url("5649206fc71be0e70404f1f7bfa9f50d.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    min-height: 100vh;
-    padding-top: 40px;
-}
-
-/* ---------- PORTFOLIO BOX ---------- */
-.portfolio-box {
-    width: 80%;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background: rgba(255,255,255,0.85);
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
-
-.profile-img {
-    width: 350px;
-    height: 350px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.text-box {
-    margin-left: 30px;
-    max-width: 350px;
-}
-
-a {
-    color: blue;
-}
-
