@@ -4,7 +4,7 @@
     height: 100vh;
 }
 
-/* Portfolio background */
+/* Portfolio background (THIS MUST BE ALONE) */
 #portfolioPage {
     background-image: url("5649206fc71be0e70404f1f7bfa9f50d.jpg");
     background-size: cover;
@@ -51,4 +51,35 @@
 .input-group input {
     width: 85%;
     padding: 8px;
+}
+
+.eye {
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    cursor: pointer;
+}
+
+/* ---------- PORTFOLIO BOX ---------- */
+.portfolio-box {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.profile-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.text-box {
+    margin-left: 30px;
+    max-width: 350px;
+}
+
+a {
+    color: blue;
 }
