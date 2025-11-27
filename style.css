@@ -3,6 +3,11 @@
     display: none;
     height: 100vh;
 }
+/* Portfolio content */
+.container {
+    display: flex;
+    padding: 20px;
+}
 
 /* Beige background for login/register */
 .login-bg {
@@ -56,17 +61,13 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
+
   min-height: 100vh;
   padding-top: 40px;
 
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* Portfolio content */
-.container {
-    display: flex;
-    padding: 20px;
-}
 
 .profile-img {
     width: 350px;
