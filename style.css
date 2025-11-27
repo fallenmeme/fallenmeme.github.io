@@ -1,12 +1,21 @@
-body {
-    .space-cover {
+.space-cover {
   background-image: url("simple-background-some-strawberry-vector-pink-background-pink-strawberry-strawberry-pattern-cute-strawberry-pink-114684385.webp");
-  background-size: cover;    /* covers only the section */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
 
-  /* control the height so it doesn't take the whole page */
-  height: 400px; /* or whatever height you want */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+
+    /* 👇 Added shadow border */
+    background: rgba(255,255,255,0.6);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 
