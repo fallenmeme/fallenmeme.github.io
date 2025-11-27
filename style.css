@@ -1,49 +1,39 @@
-.space-cover {
-  background-image: url("simple-background-some-strawberry-vector-pink-background-pink-strawberry-strawberry-pattern-cute-strawberry-pink-114684385.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
-  min-height: 100vh;
-  padding-top: 40px;
+/* ---------- PAGE BACKGROUNDS ---------- */
+.page {
+    display: none;
+    height: 100vh;
 }
 
-.container {
+/* Beige background for login/register */
+.login-bg {
+    background: beige;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    padding: 20px;
-
-    /* 👇 Added shadow border */
-    background: rgba(255,255,255,0.6);
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-
-/* Page containers */
-.page {
-    display: none;
-    padding-top: 40px;
+/* ---------- LOGIN / REGISTER BOX ---------- */
+.center-box {
+    margin: auto;
 }
 
-/* Login + Register box */
 .box {
     background: white;
     padding: 20px;
-    width: 300px;
-    margin: auto;
-    border-radius: 10px;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
-/* Input groups for eye icon */
+/* Input fields */
 .input-group {
     position: relative;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .input-group input {
-    width: 90%;
+    width: 85%;
     padding: 8px;
 }
 
@@ -52,21 +42,26 @@
     right: 20px;
     top: 8px;
     cursor: pointer;
-    user-select: none;
 }
 
-button {
-    padding: 8px 20px;
-    margin-top: 10px;
-    cursor: pointer;
+/* ---------- PORTFOLIO BOX ---------- */
+.portfolio-box {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+
+    background-image: url("simple-background-some-strawberry-vector-pink-background-pink-strawberry-strawberry-pattern-cute-strawberry-pink-114684385.webp");
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* Portfolio layout */
+/* Portfolio content */
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
     padding: 20px;
 }
 
@@ -74,12 +69,12 @@ button {
     width: 350px;
     height: 350px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .text-box {
     margin-left: 30px;
     max-width: 350px;
-    text-align: left;
 }
 
 a {
