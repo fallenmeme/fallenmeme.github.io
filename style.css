@@ -4,22 +4,6 @@
     height: 100vh;
 }
 
-/* Portfolio background (THIS MUST BE ALONE) */
-#portfolioPage {
-    background-image: url("5649206fc71be0e70404f1f7bfa9f50d.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    min-height: 100vh;
-    padding-top: 40px;
-}
-
-/* Portfolio content */
-.container {
-    display: flex;
-    padding: 20px;
-}
-
 /* Beige background for login/register */
 .login-bg {
     background: beige;
@@ -65,6 +49,19 @@
     width: 80%;
     max-width: 900px;
     margin: 40px auto;
+    padding: 20px;
+
+    background-image: url("simple-background-some-strawberry-vector-pink-background-pink-strawberry-strawberry-pattern-cute-strawberry-pink-114684385.webp");
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Portfolio content */
+.container {
+    display: flex;
     padding: 20px;
 }
 
