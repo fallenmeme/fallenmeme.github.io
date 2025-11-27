@@ -1,8 +1,10 @@
 .space-cover {
-  background-image: url("red-hand-drawn-cherry-seamless-pattern-pink-social-template_53876-116104.avif");
+  background-image: url("simple-background-some-strawberry-vector-pink-background-pink-strawberry-strawberry-pattern-cute-strawberry-pink-114684385.webp");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
+  min-height: 100vh;
+  padding-top: 40px;
 }
 
 .container {
