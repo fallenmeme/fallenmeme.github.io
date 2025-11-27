@@ -3,6 +3,7 @@
     display: none;
     height: 100vh;
 }
+
 /* Portfolio content */
 .container {
     display: flex;
@@ -49,25 +50,26 @@
     cursor: pointer;
 }
 
+/* ---------- PORTFOLIO PAGE BACKGROUND ---------- */
+#portfolioPage {
+    background-image: url("5649206fc71be0e70404f1f7bfa9f50d.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
 /* ---------- PORTFOLIO BOX ---------- */
 .portfolio-box {
     width: 80%;
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
-
-    #portfolioPage {
-  background-image: url("5649206fc71be0e70404f1f7bfa9f50d.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
-
-  min-height: 100vh;
-  padding-top: 40px;
-
+    background: rgba(255,255,255,0.85);
+    border-radius: 15px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
-
 
 .profile-img {
     width: 350px;
