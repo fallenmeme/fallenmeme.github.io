@@ -58,8 +58,10 @@ function toggleRegisterPass() {
 // Start at login page
 showPage("loginPage");
 function logout() {
-    showPage('loginPage');
-    document.getElementById("loginUser").value = "";
-    document.getElementById("loginPass").value = "";
+   console.log("Logout clicked");
+   showPage('loginPage');
+   document.getElementById("loginUser").value = "";
+   document.getElementById("loginPass").value = "";
 }
+
 
