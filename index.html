@@ -1,46 +1,70 @@
-<!-- PORTFOLIO PAGE -->
-<div id="portfolioPage" class="page portfolio-bg">
-
-    <!-- Logout button -->
-    <button class="logout-btn" onclick="showPage('loginPage')">Logout</button>
-
-    <div class="portfolio-wrapper">
-
-        <!-- FIRST BOX -->
-        <div class="portfolio-box">
-            <div class="container">
-                <img class="profile-img" 
-                    src="IMG_20250912_115709_614.webp"
-                    alt="Paulene Heart">
-
-                <div class="text-box">
-                    <h2>GET TO KNOW ME!</h2>
-                    <p><strong>Name:</strong> Paulene Heart Z. Jumao-as</p>
-                    <p><strong>Address:</strong> P-4 Brgy. Marcos Magallanes Agusan del Norte</p>
-                    <p><strong>Birthdate:</strong> January 29, 2007</p>
-                    <p><strong>Age:</strong> 18 years old</p>
-                    <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
-                    <p><strong>Year Level:</strong> 1st Year</p>
-                    <p><strong>Hobbies:</strong> Reading comics, listening to music</p>
-
-                    <h3>MY SOCIAL MEDIA ACCOUNTS:</h3>
-                    <p><a href="https://www.facebook.com/paulene.heart.jumao.as">My Facebook</a></p>
-                    <p><a href="mailto:pauleneheart86@gmail.com">My Email</a></p>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Paulene's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ================= LOGIN PAGE ================= -->
+<div id="loginPage" class="page login-bg">
+    <div class="box">
+        <h2>LOGIN</h2>
+        <div class="input-group">
+            <input type="text" id="loginUser" placeholder="Username">
         </div>
-
-        <!-- SECOND BOX (NEW INFO) -->
-        <div class="portfolio-box second-box">
-            <h2>MORE ABOUT ME</h2>
-            <p><strong>Favorite Foods:</strong> Ice cream, spaghetti, fried chicken</p>
-            <p><strong>Favorite Colors:</strong> Pink, beige</p>
-            <p><strong>Skills:</strong> Coding, drawing, editing</p>
-            <p><strong>Goals in Life:</strong>  
-            To become a successful IT professional and help my family.</p>
-            <p><strong>Fun Facts:</strong>  
-            I love cute designs, cherries aesthetic, and digital art.</p>
+        <div class="input-group">
+            <input type="password" id="loginPass" placeholder="Password">
+            <span class="eye" onclick="toggleLoginPass()">👁️</span>
         </div>
-
+        <button onclick="login()">Login</button>
+        <p>Don't have an account?  
+        <a href="#" onclick="showPage('registerPage')">Register</a></p>
     </div>
 </div>
+
+<!-- ================= REGISTER PAGE ================= -->
+<div id="registerPage" class="page login-bg">
+    <div class="box">
+        <h2>REGISTER</h2>
+        <div class="input-group">
+            <input type="text" id="newUser" placeholder="Create Username">
+        </div>
+        <div class="input-group">
+            <input type="password" id="newPass" placeholder="Create Password">
+            <span class="eye" onclick="toggleRegisterPass()">👁️</span>
+        </div>
+        <button onclick="register()">Register</button>
+        <p>Already have an account?  
+        <a href="#" onclick="showPage('loginPage')">Login</a></p>
+    </div>
+</div>
+
+<!-- ================= PORTFOLIO PAGE ================= -->
+<div id="portfolioPage" class="page">
+    <div class="portfolio-box">
+        <div class="container">
+            <img class="profile-img" 
+                 src="IMG_20250912_115709_614.webp"
+                 alt="Paulene Heart">
+            <div class="text-box">
+                <h2>GET TO KNOW ME!</h2>
+                <p><strong>Name:</strong> Paulene Heart Z. Jumao-as</p>
+                <p><strong>Address:</strong> P-4 Brgy. Marcos Magallanes Agusan del Norte</p>
+                <p><strong>Birthdate:</strong> January 29, 2007</p>
+                <p><strong>Age:</strong> 18 years old</p>
+                <p><strong>Course:</strong> BS Information Technology</p>
+                <p><strong>Year Level:</strong> 1st Year</p>
+                <p><strong>Hobbies:</strong> Reading comics, listening to music</p>
+                <h3>MY SOCIAL MEDIA ACCOUNTS:</h3>
+                <p><a href="https://www.facebook.com/paulene.heart.jumao.as" target="_blank">My Facebook</a></p>
+                <p><a href="mailto:pauleneheart86@gmail.com">My Email</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
