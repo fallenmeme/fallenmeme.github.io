@@ -235,14 +235,22 @@ a:hover {
 }
 
 #logoutBtn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    position: fixed;      /* stays in the corner, not affected by layout */
+    top: 12px;
+    right: 12px;
+
     background-color: #cc0000;
     color: white;
-    padding: 2px 8px;   /* tightened padding */
+
+    padding: 2px 8px;     /* tight button */
     font-size: 14px;
+
     border: none;
     border-radius: 2px;
     cursor: pointer;
+
+    width: auto !important;       /* FORCE small size */
+    display: inline-block !important; 
+    min-width: 0 !important;      /* prevents stretching */
+    z-index: 9999;
 }
