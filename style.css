@@ -234,27 +234,23 @@ a:hover {
     }
 }
 
-#logoutButton {
-  /* Basic button styles */
-    position: fixed-upperight;
-  background-color: #f44336; /* Red background */
-  color: white; /* White text */
-  padding: 10px 20px; /* Padding inside the button */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Change cursor to a pointer on hover */
-  font-size: 16px; /* Font size */
-  text-align: center; /* Center the text */
-  text-decoration: none; /* Remove underline if it's a link */
+#logoutBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 
-  /* Optional: Positioning */
-  /* If you want to place it in a specific corner, e.g., top-right */
-  /* position: fixed; */
-  /* top: 20px; */
-  /* right: 20px; */
+    background-color: red;
+    color: white;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+
+    /* Optional hover effect */
+    transition: 0.2s;
 }
 
-#logoutButton:hover {
-  /* Styles for when the mouse hovers over the button */
-  background-color: #d32f2f; /* Darker red on hover */
+#logoutBtn:hover {
+    background-color: darkred;
 }
