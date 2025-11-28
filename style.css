@@ -241,13 +241,13 @@ a:hover {
 
     background-color: red;
     color: white;
-
-    padding: 3px 8px;   /* small spacing around text */
-    font-size: 14px;
     border: none;
+
+    padding: 2px 6px;     /* very small padding */
+    font-size: 14px;
     border-radius: 4px;
 
-    width: fit-content;   /* THIS is the magic */
-    height: fit-content;  /* makes the bg match text size */
+    width: auto;          /* makes button fit text only */
+    display: inline-block; 
     cursor: pointer;
 }
