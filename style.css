@@ -234,24 +234,21 @@ a:hover {
     }
 }
 
-.logout-btn {
-    position: right-fixed;       
-    top: 15px;
+#logoutBtn {
+    position: absolute;
+    top: 20px;
     right: 20px;
-    background: red;
+    background-color: #d9534f; /* red */
     color: white;
     border: none;
-    padding: 10px 18px;
+    padding: 10px 20px;
     font-size: 16px;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
     z-index: 999;
+    transition: 0.3s;
 }
 
-.logout-btn:hover {
-    background: #ff4780;
+#logoutBtn:hover {
+    background-color: #c9302c;
 }
-
-
-
