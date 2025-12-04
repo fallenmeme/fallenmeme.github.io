@@ -14,7 +14,7 @@ html, body {
 }
 
 input, button {
-    font-size: 16px; /* Prevents auto-zoom on mobile */
+    font-size: 16px;
 }
 
 /* ---------- PAGE BACKGROUNDS ---------- */
@@ -50,7 +50,6 @@ input, button {
     font-size: 2em;
 }
 
-/* Input fields */
 .input-group {
     position: relative;
     margin: 15px 0;
@@ -61,7 +60,6 @@ input, button {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
 }
 
 .eye {
@@ -94,7 +92,6 @@ button:hover {
     margin-top: 15px;
 }
 
-/* Links */
 a {
     color: blue;
     text-decoration: none;
@@ -104,20 +101,23 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ---------- PORTFOLIO PAGE ---------- */
+/* ---------- FIXED PORTFOLIO PAGE (NOW STACKS SECTIONS VERTICALLY) ---------- */
 #portfolioPage {
     background-color: #ffe6f0;
     padding: 20px;
     min-height: 100vh;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;   /* 🔥 stacks boxes downward */
+    align-items: center;      /* center boxes horizontally */
+    justify-content: flex-start; /* place boxes at top not center */
+    gap: 40px;                /* space between page 1 & page 2 */
 }
 
+/* Portfolio container box */
 .portfolio-box {
     width: 90%;
     max-width: 900px;
-    margin: 20px auto;
     padding: 30px;
     background-image: url("26d38200d17b3daa565feda65fa64164.jpg");
     background-size: cover;
@@ -126,16 +126,15 @@ a:hover {
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* FLEX container for portfolio */
+/* FLEX container for profile content */
 .container {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 30px;
 }
 
-/* Profile picture */
 .profile-img {
     width: 300px;
     height: 300px;
@@ -145,7 +144,6 @@ a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Text box */
 .text-box {
     max-width: 450px;
     line-height: 1.6;
@@ -167,68 +165,66 @@ a:hover {
     margin: 8px 0;
 }
 
-/* ---------- TABLET RESPONSIVE (768px and below) ---------- */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
-    /* Portfolio container becomes vertical */
     .container {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
-    
+
     .profile-img {
         width: 250px;
         height: 250px;
     }
-    
+
     .text-box {
         max-width: 100%;
     }
-    
+
     .portfolio-box {
         padding: 20px;
         width: 95%;
     }
-    
+
     .text-box h2 {
         font-size: 1.8em;
     }
 }
 
-/* ---------- MOBILE RESPONSIVE (480px and below) ---------- */
 @media (max-width: 480px) {
     .profile-img {
         width: 200px;
         height: 200px;
     }
-    
+
     .box {
         width: 95%;
         padding: 20px 15px;
     }
-    
+
     .box h2 {
         font-size: 1.6em;
     }
-    
+
     .portfolio-box {
         width: 95%;
         padding: 15px;
         margin: 10px auto;
     }
-    
+
     .text-box {
         font-size: 14px;
     }
-    
+
     .text-box h2 {
         font-size: 1.5em;
     }
-    
+
     .text-box h3 {
         font-size: 1.1em;
     }
-    
+
     button {
         padding: 10px;
     }
@@ -243,11 +239,11 @@ a:hover {
     color: white;
     border: none;
 
-    padding: 2px 6px;     /* very small padding */
+    padding: 2px 6px;
     font-size: 14px;
     border-radius: 4px;
 
-    width: auto;          /* makes button fit text only */
-    display: inline-block; 
+    width: auto;
+    display: inline-block;
     cursor: pointer;
 }
