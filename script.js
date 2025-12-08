@@ -48,15 +48,10 @@ function login() {
 }
 
 
-showPage("loginPage");
-function logout() {
-    // LOGOUT
+// LOGOUT
 function logout() {
     document.getElementById("portfolio-page").style.display = "none";
     document.getElementById("login-page").style.display = "flex";
 }
-   console.log("Logout clicked");
-   showPage('loginPage');
-   document.getElementById("loginUser").value = "";
-   document.getElementById("loginPass").value = "";
-}
+
+
