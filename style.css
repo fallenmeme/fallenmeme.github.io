@@ -257,4 +257,74 @@ header {
 }
 
 
+/* ==================== MOBILE RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    /* Home Section */
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-img img {
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* About Section */
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .about-img {
+        width: 80%;
+        max-width: 320px;
+    }
+
+    /* Services Section */
+    .service-boxes {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .service-box {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    /* Portfolio Section */
+    .portfolio-gallery {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .portfolio-item img {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* Navbar adjustments */
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 5%;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
 
