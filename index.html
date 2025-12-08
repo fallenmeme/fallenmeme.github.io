@@ -1,90 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Login</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
 
-<nav>
-    <h2>My Portfolio</h2>
-    <button id="logoutBtn" onclick="logout()">Logout</button>
-</nav>
+    <!-- LOGIN PAGE -->
+    <div id="login-page" class="login-container">
+        <h2>Login</h2>
 
-<!-- HOME SECTION -->
-<section id="home">
-    <h1>WELCOME TO MY PORTFOLIO!</h1>
-    <p>
-        Hi! I’m <b>Paulene Heart Z. Jumao-as</b>, a <b>1st-year BSIT student at Caraga State University – Cabadbaran Campus</b> 
-        with a curious mind, a love for technology, and a passion for turning ideas into interactive digital experiences.
-        Whether I’m coding a website, designing a layout, or experimenting with new tools, I enjoy the process of creating 
-        something useful and visually engaging. I believe technology should be simple, meaningful, and enjoyable — and that’s 
-        exactly what I aim to build.
-    </p>
-</section>
+        <input type="text" id="username" placeholder="Enter username">
+        <input type="password" id="password" placeholder="Enter password">
 
-<!-- ABOUT ME SECTION -->
-<section id="about">
-    <h2>ABOUT ME</h2>
+        <button onclick="login()">Login</button>
 
-    <p><b>Name:</b> Paulene Heart Z. Jumao-as</p>
-    <p><b>Address:</b> P-4 Brgy. Marcos, Magallanes, Agusan del Norte</p>
-    <p><b>Birthdate:</b> January 29, 2007</p>
-    <p><b>Age:</b> 18 years old</p>
-    <p><b>Course:</b> BS Information Technology</p>
-    <p><b>Year Level:</b> 1st Year</p>
-    <p><b>Hobbies:</b> Reading comics, listening to music</p>
-
-    <p>
-        I’m currently exploring the world of programming and design, learning how to combine creativity with technology. 
-        I enjoy working on simple projects that help me improve my skills while allowing me to express my ideas in digital form.
-    </p>
-</section>
-
-<!-- PROJECTS SECTION -->
-<section id="projects">
-    <h2>MY PROJECTS</h2>
-
-    <!-- PROJECT 1 -->
-    <div class="project">
-        <img src="img/project1.jpg" alt="Project 1">
-        <p>
-            <b>1. Personal Calculator App (Mini JavaScript Project)</b><br>
-            A simple web-based calculator that performs basic math operations.  
-            Created to practice JavaScript functions, buttons, and input handling.
+        <p class="switch-text">
+            Don't have an account? 
+            <a href="#" onclick="showRegister()">Register</a>
         </p>
     </div>
 
-    <!-- PROJECT 2 -->
-    <div class="project">
-        <img src="img/project2.jpg" alt="Project 2">
-        <p>
-            <b>2. Responsive Login Page UI</b><br>
-            A clean and modern login interface built using HTML and CSS.  
-            This project helped me understand layout design, responsiveness, and user experience.
+    <!-- REGISTER PAGE -->
+    <div id="register-page" class="login-container" style="display:none;">
+        <h2>Register</h2>
+
+        <input type="text" id="reg-username" placeholder="Create username">
+        <input type="password" id="reg-password" placeholder="Create password">
+        <input type="password" id="reg-confirm" placeholder="Confirm password">
+
+        <button onclick="register()">Create Account</button>
+
+        <p class="switch-text">
+            Already have an account? 
+            <a href="#" onclick="showLogin()">Login</a>
         </p>
     </div>
 
-    <!-- PROJECT 3 -->
-    <div class="project">
-        <img src="img/project3.jpg" alt="Project 3">
-        <p>
-            <b>3. Portfolio Website (This Website)</b><br>
-            A personal portfolio showcasing my background, interests, and skills.  
-            Includes a working login/logout system, project section, and responsive design.
-        </p>
+    <!-- PORTFOLIO PAGE -->
+    <div id="portfolio-page" style="display: none;">
+
+        <!-- NAVIGATION BAR -->
+        <header>
+            <a class="logo">Portfolio</a>
+
+            <ul class="nav">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </header>
+
+        <!-- HOME SECTION -->
+        <section class="home" id="home">
+
+            <div class="home-content">
+                <h3>Hello, I'm</h3>
+                <h1>Paulene Heart Z. Jumao-as</h1>
+                <h3 class="subtitle">CEIT <span>MASARAP! MASARAP!!</span> CEIT <span>MASARAP! MASARAP!!</span></h3>
+
+                <p class="quote">
+                    "O give thanks to the LORD; for he is good: for his mercy endures for ever." - Psalm 136:1
+                </p>
+                <p class="motto">
+                    "If it's due tomorrow then I'm gonna do it tomorrow." - Me
+                </p>
+            </div>
+
+            <div class="home-img">
+                <img src="https://scontent.fmnl4-1.fna.fbcdn.net/v/t39.30808-6/589941149_1366034828491931_4828494042790619168_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHVdBIe8ln617SoKs_Pp7aIX5uE4rVyMd9fm4TitXIx368jrHGva2Cq-SxzgExS8KxDjarqtvThM8Y9Y_H5Wc_N&_nc_ohc=o4MWljW9_RoQ7kNvwF6ZkNX&_nc_oc=AdlUthiiJGXqSOTBdTAACJ7QxmEyNiQlGO1U7VMuVoSP7y5V48HpZBYkRCE6xj5ihkE&_nc_zt=23&_nc_ht=scontent.fmnl4-1.fna&_nc_gid=T1bEePhCtexYIMNWpnZaYA&oh=00_AfiLDDFH53DL8aoYOf2YX9FZ7X1o-aXkIUdX74obdhq3rw&oe=692F3EBB" alt="profile">
+            </div>
+
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about" id="about">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about-container">
+                <img src="https://scontent.fmnl4-2.fna.fbcdn.net/v/t39.30808-6/581333842_1355911829504231_8720695020314321109_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEApzAUPz2jSE4h9KrWNXTvZg_QqOtS-8JmD9Co61L7wqrsNoA7Qk4d3k5dMMFlEXc9Dl0MbqXPdUAsanvnF3qx&_nc_ohc=ksZ5jvybSyMQ7kNvwG4V9Ei&_nc_oc=AdnTqbjtNiMGX12Vzbfw5_PtPq6bPPt-3QBQeLZjqkZMpPzy9Qf2YGNbRPWt6nv9Keg&_nc_zt=23&_nc_ht=scontent.fmnl4-2.fna&_nc_gid=NJVmWFbgYSiMnQi_Ng7Vbw&oh=00_AfgTKwu4chFnpT00hi5AAKO9l3jwRcY4tPJOQ7NYfdxg4A&oe=692F51B0" class="about-img">
+
+                <div class="about-text">
+                    <h2>Name: Paulene Heart Z. Jumao-as</h2>
+                    <p><b>Age:</b> 18 years old</p>
+                    <p><b>Birthday:</b> January 29, 2007</p>
+                    <p><b>Address:</b> P-4 Brgy. Marcos Magallanes Agusan del Norte</p>
+                    <p><b>Course:</b> Bachelor of Science in Information Technology</p>
+                    <p><b>Hobbies:</b> Reading Comics, Listening to music, Dancing and Singing</p>
+                    <p><b>Favorite Food:</b>Spaghetti, Afritada, Fries, Ice Cream</p>
+                    <p><b>Likes:</b>Hanging out with friends</p>
+                    <p><b>Dislikes:</b> Loud noises, yelling</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section class="services" id="services">
+            <h2 class="section-title">My Services</h2>
+
+            <div class="service-boxes">
+
+                <div class="service-box">
+                    <i class='bx bx-code-alt'></i>
+                    <h3>Website</h3>
+                    <p>I can make simple and clean websites for projects and also powerpoint presentations.</p>
+                </div>
+
+                <div class="service-box">
+                    <i class='bx bx-paint'></i>
+                    <h3>Design</h3>
+                    <p>I create aesthetic and clean PowerPoint designs.</p>
+                </div>
+
+                <div class="service-box">
+                    <i class='bx bx-camera'></i>
+                    <h3>Photography</h3>
+                    <p>I capture aesthetic pictures for projects, personal use and for fun.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section class="portfolio" id="portfolio">
+            <h2 class="section-title">My Portfolio</h2>
+
+            <div class="portfolio-gallery">
+
+                <div class="portfolio-item">
+                    <img src="591737045_1366375758457838_5199171781713111858_n.jpg">
+                    <h4>Paulene</h4>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="588957524_1366560788439335_7250901825858428339_n.jpg">
+                    <h4>Coding</h4>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="876f57c4-428e-4399-81ed-e00ad1eb7d29 (1).jpg">
+                    <h4>Studying</h4>
+                </div>
+
+            </div>
+        </section>
+
     </div>
-</section>
 
-<!-- CONTACT SECTION -->
-<section id="contact">
-    <h2>CONTACT ME</h2>
-    <p><b>Facebook:</b> (Place your Facebook link here)</p>
-    <p><b>Email:</b> (Place your Email here)</p>
-</section>
+    <script src="script.js"></script>
 
-<script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
