@@ -2,81 +2,87 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Paulene's Portfolio</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- ================= LOGIN PAGE ================= -->
-<div id="loginPage" class="page login-bg">
-    <div class="box">
-        <h2>LOGIN</h2>
-        <div class="input-group">
-            <input type="text" id="loginUser" placeholder="Username">
-        </div>
-        <div class="input-group">
-            <input type="password" id="loginPass" placeholder="Password">
-            <span class="eye" onclick="toggleLoginPass()">👁️</span>
-        </div>
-        <button onclick="login()">Login</button>
-        <p>Don't have an account?  
-        <a href="#" onclick="showPage('registerPage')">Register</a></p>
-    </div>
-</div>
 
-<!-- ================= REGISTER PAGE ================= -->
-<div id="registerPage" class="page login-bg">
-    <div class="box">
-        <h2>REGISTER</h2>
-        <div class="input-group">
-            <input type="text" id="newUser" placeholder="Create Username">
-        </div>
-        <div class="input-group">
-            <input type="password" id="newPass" placeholder="Create Password">
-            <span class="eye" onclick="toggleRegisterPass()">👁️</span>
-        </div>
-        <button onclick="register()">Register</button>
-        <p>Already have an account?  
-        <a href="#" onclick="showPage('loginPage')">Login</a></p>
-    </div>
-</div>
-
-<!-- ================= PORTFOLIO PAGE ================= -->
-<div id="portfolioPage" class="page">
+<nav>
+    <h2>My Portfolio</h2>
     <button id="logoutBtn" onclick="logout()">Logout</button>
-    <div class="portfolio-box">
-        <div class="container">
-            <img class="profile-img" 
-                 src="IMG_20250912_115709_614.webp"
-                 alt="Paulene Heart">
-            <div class="text-box">
-                <h2>WELCOME TO MY PORTFOLIO!</h2>
-                <p>Hi! I am <strong>Paulene Heart Z. Jumao-as</strong> , a 1st year BSIT student at <strong>Caraga State University Cabadbaran Campus</strong> with a curious mind, a love for technology, and a passion for turning ideas into interactive digital experiences. Whether I’m coding a website, designing a layout, or experimenting with new tools, I enjoy the process of creating something useful and visually engaging. I believe technology should be simple, meaningful, and enjoyable — and that’s exactly what I aim to build.</p>
-                
-            </div>
-        </div>
+</nav>
+
+<!-- HOME SECTION -->
+<section id="home">
+    <h1>WELCOME TO MY PORTFOLIO!</h1>
+    <p>
+        Hi! I’m <b>Paulene Heart Z. Jumao-as</b>, a <b>1st-year BSIT student at Caraga State University – Cabadbaran Campus</b> 
+        with a curious mind, a love for technology, and a passion for turning ideas into interactive digital experiences.
+        Whether I’m coding a website, designing a layout, or experimenting with new tools, I enjoy the process of creating 
+        something useful and visually engaging. I believe technology should be simple, meaningful, and enjoyable — and that’s 
+        exactly what I aim to build.
+    </p>
+</section>
+
+<!-- ABOUT ME SECTION -->
+<section id="about">
+    <h2>ABOUT ME</h2>
+
+    <p><b>Name:</b> Paulene Heart Z. Jumao-as</p>
+    <p><b>Address:</b> P-4 Brgy. Marcos, Magallanes, Agusan del Norte</p>
+    <p><b>Birthdate:</b> January 29, 2007</p>
+    <p><b>Age:</b> 18 years old</p>
+    <p><b>Course:</b> BS Information Technology</p>
+    <p><b>Year Level:</b> 1st Year</p>
+    <p><b>Hobbies:</b> Reading comics, listening to music</p>
+
+    <p>
+        I’m currently exploring the world of programming and design, learning how to combine creativity with technology. 
+        I enjoy working on simple projects that help me improve my skills while allowing me to express my ideas in digital form.
+    </p>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects">
+    <h2>MY PROJECTS</h2>
+
+    <!-- PROJECT 1 -->
+    <div class="project">
+        <img src="img/project1.jpg" alt="Project 1">
+        <p>
+            <b>1. Personal Calculator App (Mini JavaScript Project)</b><br>
+            A simple web-based calculator that performs basic math operations.  
+            Created to practice JavaScript functions, buttons, and input handling.
+        </p>
     </div>
 
-    <!-- ========== EMPTY SECTION BELOW (BLANK PAGE) ========== -->
-    <div class="portfolio-box">
-        <div class="container">
-            <div class="text-box">
-                <h2>MORE ABOUT ME :</h2>
-                <p><strong>Address:</strong> P-4 Brgy. Marcos Magallanes Agusan del Norte</p>
-                <p><strong>Birthdate:</strong> January 29, 2007</p>
-                <p><strong>Age:</strong> 18 years old</p>
-                <p><strong>Course:</strong> BS Information Technology</p>
-                <p><strong>Year Level:</strong> 1st Year</p>
-                <p><strong>Hobbies:</strong> Reading comics, listening to music</p>
-                <h3>MY SOCIAL MEDIA ACCOUNTS:</h3>
-                <p><a href="https://www.facebook.com/paulene.heart.jumao.as" target="_blank">My Facebook</a></p>
-                <p><a href="mailto:pauleneheart86@gmail.com">My Email</a></p>
-            </div>
-        </div>
+    <!-- PROJECT 2 -->
+    <div class="project">
+        <img src="img/project2.jpg" alt="Project 2">
+        <p>
+            <b>2. Responsive Login Page UI</b><br>
+            A clean and modern login interface built using HTML and CSS.  
+            This project helped me understand layout design, responsiveness, and user experience.
+        </p>
     </div>
-    <!-- ========== END EMPTY SECTION ========== -->
 
-</div>
+    <!-- PROJECT 3 -->
+    <div class="project">
+        <img src="img/project3.jpg" alt="Project 3">
+        <p>
+            <b>3. Portfolio Website (This Website)</b><br>
+            A personal portfolio showcasing my background, interests, and skills.  
+            Includes a working login/logout system, project section, and responsive design.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <h2>CONTACT ME</h2>
+    <p><b>Facebook:</b> (Place your Facebook link here)</p>
+    <p><b>Email:</b> (Place your Email here)</p>
+</section>
 
 <script src="script.js"></script>
 </body>
