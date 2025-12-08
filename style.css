@@ -14,6 +14,7 @@ body {
 
 /* LOGIN PAGE */
 .login-container {
+    background: url('1763619740021.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -31,7 +32,6 @@ body {
     flex-direction: column;
     width: 300px;
     margin: 120px auto;
-    background: url('1763619740021.jpg') no-repeat center center/cover;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
