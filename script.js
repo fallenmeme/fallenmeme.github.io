@@ -1,35 +1,54 @@
-// LOGIN FUNCTION
-function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-    let error = document.getElementById("error");
+function showRegister() {
+    document.getElementById("login-page").style.display = "none";
+    document.getElementById("register-page").style.display = "flex";
+}
 
-    if (user === "" || pass === "") {
-        error.innerHTML = "Please fill out all fields.";
+function showLogin() {
+    document.getElementById("register-page").style.display = "none";
+    document.getElementById("login-page").style.display = "flex";
+}
+
+// REGISTER
+function register() {
+    let user = document.getElementById("reg-username").value;
+    let pass = document.getElementById("reg-password").value;
+    let confirm = document.getElementById("reg-confirm").value;
+
+    if (user === "" || pass === "" || confirm === "") {
+        alert("Please fill in all fields!");
         return;
     }
 
-    // DEFAULT SAMPLE LOGIN
-    if (user === "admin" && pass === "1234") {
-        localStorage.setItem("loggedIn", "true");
-        window.location.href = "portfolio.html";
+    if (pass !== confirm) {
+        alert("Passwords do not match!");
+        return;
+    }
+
+    localStorage.setItem("savedUser", user);
+    localStorage.setItem("savedPass", pass);
+
+    alert("Account created successfully!");
+    showLogin();
+}
+
+// LOGIN
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    let savedUser = localStorage.getItem("savedUser");
+    let savedPass = localStorage.getItem("savedPass");
+
+    if (user === savedUser && pass === savedPass) {
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("portfolio-page").style.display = "block";
     } else {
-        error.innerHTML = "Invalid username or password.";
+        alert("Incorrect username or password!");
     }
 }
 
-// LOGOUT FUNCTION
+// LOGOUT
 function logout() {
-    localStorage.removeItem("loggedIn");
-    alert("You have logged out.");
-    window.location.href = "index.html";
+    document.getElementById("portfolio-page").style.display = "none";
+    document.getElementById("login-page").style.display = "flex";
 }
-
-// RESTRICT PORTFOLIO PAGE WHEN NOT LOGGED IN
-if (window.location.pathname.includes("portfolio.html")) {
-    if (!localStorage.getItem("loggedIn")) {
-        alert("You must login first.");
-        window.location.href = "index.html";
-    }
-}
-
