@@ -1,66 +1,54 @@
-// Show selected page only
-function showPage(pageId) {
-    document.getElementById("loginPage").style.display = "none";
-    document.getElementById("registerPage").style.display = "none";
-    document.getElementById("portfolioPage").style.display = "none";
-
-    document.getElementById(pageId).style.display = "flex";
+function showRegister() {
+    document.getElementById("login-page").style.display = "none";
+    document.getElementById("register-page").style.display = "flex";
 }
 
-// Register new user
+function showLogin() {
+    document.getElementById("register-page").style.display = "none";
+    document.getElementById("login-page").style.display = "flex";
+}
+
+// REGISTER
 function register() {
-    let user = document.getElementById("newUser").value;
-    let pass = document.getElementById("newPass").value;
+    let user = document.getElementById("reg-username").value;
+    let pass = document.getElementById("reg-password").value;
+    let confirm = document.getElementById("reg-confirm").value;
 
-    if (user === "" || pass === "") {
-        alert("Please fill out all fields.");
-        return;
-    }
+    if (user === "" || pass === "" || confirm === "") {
+        alert("Please fill in all fields!");
+        return;
+    }
 
-    localStorage.setItem("username", user);
-    localStorage.setItem("password", pass);
+    if (pass !== confirm) {
+        alert("Passwords do not match!");
+        return;
+    }
 
-    alert("Registration successful! Please log in.");
+    localStorage.setItem("savedUser", user);
+    localStorage.setItem("savedPass", pass);
 
-    // Clear login fields after registering
-    document.getElementById("loginUser").value = "";
-    document.getElementById("loginPass").value = "";
-
-    showPage("loginPage");
+    alert("Account created successfully!");
+    showLogin();
 }
 
-// Login
+// LOGIN
 function login() {
-    let savedUser = localStorage.getItem("username");
-    let savedPass = localStorage.getItem("password");
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
 
-    let user = document.getElementById("loginUser").value;
-    let pass = document.getElementById("loginPass").value;
+    let savedUser = localStorage.getItem("savedUser");
+    let savedPass = localStorage.getItem("savedPass");
 
-    if (user === savedUser && pass === savedPass) {
-        showPage("portfolioPage");
-    } else {
-        alert("Incorrect username or password!");
-    }
+    if (user === savedUser && pass === savedPass) {
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("portfolio-page").style.display = "block";
+    } else {
+        alert("Incorrect username or password!");
+    }
 }
 
-// Password visibility toggles
-function toggleLoginPass() {
-    let field = document.getElementById("loginPass");
-    field.type = field.type === "password" ? "text" : "password";
-}
-
-function toggleRegisterPass() {
-    let field = document.getElementById("newPass");
-    field.type = field.type === "password" ? "text" : "password";
-}
-
-// Start at login page
-showPage("loginPage");
+// LOGOUT
 function logout() {
-   console.log("Logout clicked");
-   showPage('loginPage');
-   document.getElementById("loginUser").value = "";
-   document.getElementById("loginPass").value = "";
+    document.getElementById("portfolio-page").style.display = "none";
+    document.getElementById("login-page").style.display = "flex";
 }
-
