@@ -327,3 +327,26 @@ header {
         gap: 15px;
     }
 }
+
+@media (max-width: 768px) {
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px; /* avoid navbar overlap */
+    }
+
+    .home-content h1 {
+        font-size: 28px;       /* was 55px — too big for mobile */
+        line-height: 1.2;
+        word-wrap: break-word; /* ensures long names wrap */
+    }
+
+    .home-content h3 {
+        font-size: 18px;
+    }
+}
+h1, h2, h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
