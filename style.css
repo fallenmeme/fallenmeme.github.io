@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -16,50 +16,73 @@ body {
 .login-container {
     display: flex;
     flex-direction: column;
-    width: 90%;
-    max-width: 340px;
-    margin: 100px auto;
+    width: 300px;
+    margin: 120px auto;
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+/* LOGIN PAGE WITH BACKGROUND IMAGE */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 120px auto;
     background: url('477680620_1142181200877296_8768096084117404959_n.jpg') no-repeat center center/cover;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* optional for better readability */
     position: relative;
+    z-index: 1;
 }
 
+/* Optional: Add a semi-transparent overlay for readability */
 .login-container::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.7);
-    border-radius: 12px;
-}
-
-.login-container * {
-    position: relative;
-    z-index: 2;
-}
-
-.login-container input,
-.login-container button {
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7); /* dark overlay */
+    border-radius: 12px;
+    z-index: -1;
+}
+.login-container h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    margin: 10px 0;
     padding: 12px;
-    margin-top: 10px;
     border-radius: 8px;
     border: none;
+    width: 100%;
     font-size: 16px;
 }
 
 .login-container button {
     background: #38bdf8;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
     font-weight: bold;
-    border-radius: 20px;
 }
+
+
 
 /* NAVBAR */
 header {
     width: 100%;
-    padding: 20px 6%;
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,19 +94,19 @@ header {
 
 .logo {
     color: #fff;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
 }
 
 .nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 25px;
 }
 
 .nav a {
-    color: #a5b4fc;
     text-decoration: none;
+    color: #a5b4fc;
+    transition: .3s;
 }
 
 .nav a:hover,
@@ -91,124 +114,147 @@ header {
     color: #fff;
 }
 
-/* FIX NAV WRAP ON SMALL SCREENS */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px;
-    }
-}
 
-/* ============================= */
+
 /* HOME SECTION */
-/* ============================= */
 .home {
-    min-height: 100vh;
-    padding: 120px 6% 50px;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap; /* allows stacking */
-}
-
-.home-content {
-    flex: 1 1 350px;
+    padding: 0 8%;
 }
 
 .home-content h1 {
-    font-size: 40px;
+    font-size: 55px;
 }
 
 .subtitle span {
     color: #38bdf8;
 }
 
+.quote {
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.home .btn {
+    padding: 12px 30px;
+    background: #38bdf8;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+
+
+/* HOME IMAGE */
 .home-img img {
-    width: 100%;
-    max-width: 330px;
+    width: 330px;
     border-radius: 18px;
     border: 4px solid #38bdf8;
 }
 
-/* Make home section responsive */
-@media (max-width: 768px) {
-    .home {
-        text-align: center;
-    }
+
+
+/* ABOUT SECTION */
+.about {
+    padding: 90px 8%;
 }
 
-/* ============================= */
-/* ABOUT SECTION */
-/* ============================= */
-.about {
-    padding: 80px 6%;
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
 }
 
 .about-container {
     display: flex;
+    align-items: center;
     gap: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .about-img {
-    width: 100%;
-    max-width: 320px;
+    width: 320px;
     border-radius: 18px;
     border: 4px solid #38bdf8;
 }
 
-.about-text {
-    max-width: 500px;
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
 
-/* ============================= */
-/* SERVICES */
-/* ============================= */
+
+
+/* SERVICES SECTION */
 .services {
-    padding: 80px 6%;
+    padding: 90px 8%;
 }
 
 .service-boxes {
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+    gap: 30px;
     justify-content: center;
 }
 
 .service-box {
-    width: 100%;
-    max-width: 280px;
     background: #1e293b;
     padding: 25px;
-    border-radius: 12px;
+    width: 280px;
     text-align: center;
+    border-radius: 12px;
+    transition: .3s;
 }
 
-/* ============================= */
-/* PORTFOLIO */
-/* ============================= */
+.service-box i {
+    font-size: 45px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+}
+
+
+
+/* PORTFOLIO SECTION */
 .portfolio {
-    padding: 80px 6%;
+    padding: 90px 8%;
 }
 
 .portfolio-gallery {
     display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+    gap: 30px;
     justify-content: center;
 }
 
+.portfolio-item {
+    text-align: center;
+}
+
 .portfolio-item img {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     border-radius: 12px;
     border: 3px solid #38bdf8;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .portfolio-item img:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
+
+.switch-text {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.switch-text a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+
+
