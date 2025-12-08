@@ -47,8 +47,11 @@ function login() {
     }
 }
 
-// LOGOUT
+// Start at login page
+showPage("loginPage");
 function logout() {
-    document.getElementById("portfolio-page").style.display = "none";
-    document.getElementById("login-page").style.display = "flex";
+   console.log("Logout clicked");
+   showPage('loginPage');
+   document.getElementById("loginUser").value = "";
+   document.getElementById("loginPass").value = "";
 }
