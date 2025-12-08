@@ -11,41 +11,44 @@
 
     <!-- LOGIN PAGE -->
     <div id="login-page" class="login-container">
-        <h2>Login</h2>
+                <h2>LOGIN</h2>
+        <div class="input-group">
+            <input type="text" id="loginUser" placeholder="Username">
+        </div>
+        <div class="input-group">
+            <input type="password" id="loginPass" placeholder="Password">
+            <span class="eye" onclick="toggleLoginPass()">👁️</span>
+        </div>
+        <button onclick="login()">Login</button>
+        <p>Don't have an account?
+        <a href="#" onclick="showPage('registerPage')">Register</a></p>
+    </div>
+</div>
 
-        <input type="text" id="username" placeholder="Enter username">
-        <input type="password" id="password" placeholder="Enter password">
+<!-- ================= REGISTER PAGE ================= -->
+<div id="registerPage" class="page login-bg">
+    <div class="box">
+        <h2>REGISTER</h2>
+        <div class="input-group">
+            <input type="text" id="newUser" placeholder="Create Username">
+        </div>
+        <div class="input-group">
+            <input type="password" id="newPass" placeholder="Create Password">
+            <span class="eye" onclick="toggleRegisterPass()">👁️</span>
+        </div>
+        <button onclick="register()">Register</button>
+        <p>Already have an account?
+        <a href="#" onclick="showPage('loginPage')">Login</a></p>
+    </div>
+</div>
 
-        <button onclick="login()">Login</button>
-
-        <p class="switch-text">
-            Don't have an account? 
-            <a href="#" onclick="showRegister()">Register</a>
-        </p>
-    </div>
-
-    <!-- REGISTER PAGE -->
-    <div id="register-page" class="login-container" style="display:none;">
-        <h2>Register</h2>
-
-        <input type="text" id="reg-username" placeholder="Create username">
-        <input type="password" id="reg-password" placeholder="Create password">
-        <input type="password" id="reg-confirm" placeholder="Confirm password">
-
-        <button onclick="register()">Create Account</button>
-
-        <p class="switch-text">
-            Already have an account? 
-            <a href="#" onclick="showLogin()">Login</a>
-        </p>
-    </div>
 
     <!-- PORTFOLIO PAGE -->
     <div id="portfolio-page" style="display: none;">
 
         <!-- NAVIGATION BAR -->
         <header>
-            <a class="logo">Portfolio</a>
+            <a class="logo">My Portfolio</a>
 
             <ul class="nav">
                 <li><a href="#home" class="active">Home</a></li>
