@@ -5,25 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paulene's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Boxicons for Eye Icon -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="1763619740021.jpg" rel="stylesheet">
 </head>
-
 <body>
 
     <!-- LOGIN PAGE -->
     <div id="login-page" class="login-container">
         <h2>Login</h2>
 
-        <div class="input-group">
-            <input type="text" id="username" placeholder="Enter username">
-        </div>
-
-        <div class="input-group">
-            <input type="password" id="password" placeholder="Enter password">
-            <i class='bx bx-show eye-icon' onclick="togglePassword('password', this)"></i>
-        </div>
+        <input type="text" id="username" placeholder="Enter username">
+        <input type="password" id="password" placeholder="Enter password">
 
         <button onclick="login()">Login</button>
 
@@ -37,19 +28,9 @@
     <div id="register-page" class="login-container" style="display:none;">
         <h2>Register</h2>
 
-        <div class="input-group">
-            <input type="text" id="reg-username" placeholder="Create username">
-        </div>
-
-        <div class="input-group">
-            <input type="password" id="reg-password" placeholder="Create password">
-            <i class='bx bx-show eye-icon' onclick="togglePassword('reg-password', this)"></i>
-        </div>
-
-        <div class="input-group">
-            <input type="password" id="reg-confirm" placeholder="Confirm password">
-            <i class='bx bx-show eye-icon' onclick="togglePassword('reg-confirm', this)"></i>
-        </div>
+        <input type="text" id="reg-username" placeholder="Create username">
+        <input type="password" id="reg-password" placeholder="Create password">
+        <input type="password" id="reg-confirm" placeholder="Confirm password">
 
         <button onclick="register()">Create Account</button>
 
@@ -60,7 +41,7 @@
     </div>
 
     <!-- PORTFOLIO PAGE -->
-    <div id="portfolio-page" style="display:none;">
+    <div id="portfolio-page" style="display: none;">
 
         <!-- NAVIGATION BAR -->
         <header>
@@ -111,9 +92,13 @@
                     <p><b>Address:</b> P-4 Brgy. Marcos Magallanes Agusan del Norte</p>
                     <p><b>Course:</b> Bachelor of Science in Information Technology</p>
                     <p><b>Hobbies:</b> Reading Comics, Listening to music, Dancing and Singing</p>
-                    <p><b>Favorite Food:</b> Spaghetti, Afritada, Fries, Ice Cream</p>
-                    <p><b>Likes:</b> Hanging out with friends</p>
+                    <p><b>Favorite Food:</b>Spaghetti, Afritada, Fries, Ice Cream</p>
+                    <p><b>Likes:</b>Hanging out with friends</p>
                     <p><b>Dislikes:</b> Loud noises, yelling</p>
+                    <h2>MY SOCIAL MEDIA ACCOUNTS:</h2>
+                    <p><a href="https://www.facebook.com/paulene.heart.jumao.as" target="_blank">My Facebook</a></p>
+                    <p><a href="mailto:pauleneheart86@gmail.com">My Email</a></p>
+
                 </div>
             </div>
         </section>
@@ -127,19 +112,19 @@
                 <div class="service-box">
                     <i class='bx bx-code-alt'></i>
                     <h3>To-Do List App</h3>
-                    <p>A simple app to add, edit, and delete tasks.</p>
+                    <p>A simple app to add, edit, and delete tasks. Helps practice CRUD operations and local storage.</p>
                 </div>
 
                 <div class="service-box">
                     <i class='bx bx-paint'></i>
                     <h3>Calculator</h3>
-                    <p>A basic calculator for addition, subtraction, multiplication, and division.</p>
+                    <p>A basic calculator for addition, subtraction, multiplication, and division. Good for practicing DOM manipulation or console input handling.</p>
                 </div>
 
                 <div class="service-box">
                     <i class='bx bx-camera'></i>
                     <h3>Quiz Game</h3>
-                    <p>Interactive quiz with multiple-choice questions and scoring system.</p>
+                    <p>Interactive quiz with multiple-choice questions and scoring system. Great for logic and event handling.</p>
                 </div>
 
             </div>
