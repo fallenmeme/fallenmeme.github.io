@@ -8,17 +8,29 @@ function showLogin() {
     document.getElementById("login-page").style.display = "flex";
 }
 
+// TOGGLE PASSWORD
+function togglePassword(id, icon) {
+    let input = document.getElementById(id);
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.replace("bx-show", "bx-hide");
+    } else {
+        input.type = "password";
+        icon.classList.replace("bx-hide", "bx-show");
+    }
+}
+
 // REGISTER
 function register() {
     let user = document.getElementById("reg-username").value;
     let pass = document.getElementById("reg-password").value;
     let confirm = document.getElementById("reg-confirm").value;
 
-    if (user === "" || pass === "" || confirm === "") {
+    if (!user || !pass || !confirm) {
         alert("Please fill in all fields!");
         return;
     }
-
     if (pass !== confirm) {
         alert("Passwords do not match!");
         return;
@@ -51,4 +63,8 @@ function login() {
 function logout() {
     document.getElementById("portfolio-page").style.display = "none";
     document.getElementById("login-page").style.display = "flex";
+
+    // CLEAR INPUTS
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
 }
