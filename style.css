@@ -7,8 +7,8 @@
 }
 
 body {
-    background: #0f172a;
-    color: #e2e8f0;
+    background: #6b0b11;
+    color: #e3192d;
     scroll-behavior: smooth;
 }
 
@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     width: 300px;
     margin: 120px auto;
-    background: #1e293b;
+    background: #6b0b11;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
